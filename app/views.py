@@ -20,7 +20,7 @@ def index():
         cuisine=r.cuisine,
         subcategory=r.subcategory
     ) for r in RCs]
-    return render_template('index.html', name="develop page", entries=entries)
+    return render_template('index.html', name="develop page", entries=mentries)
 
 
 # @app.route('/search', method=['GET', 'POST'])
