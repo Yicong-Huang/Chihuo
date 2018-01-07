@@ -5,8 +5,7 @@
       <paths name="AWS">
         <serverdata>
           <mappings>
-            <mapping deploy="python/Kerena/Chihuo" local="$PROJECT_DIR$" web="/chihuo" />
-            <mapping local="" />
+            <mapping deploy="/python/Kerena/Chihuo" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>

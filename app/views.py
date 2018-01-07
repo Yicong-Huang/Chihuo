@@ -20,12 +20,12 @@ def index():
         cuisine=r.cuisine,
         subcategory=r.subcategory
     ) for r in RCs]
-    return render_template('index.html', name="develop page", entries=mentries)
+    return render_template('index.html', name="develop page", entries=entries)
 
 
-# @app.route('/search', method=['GET', 'POST'])
-# def search():
-#     pass
+@app.route('/login', method=['GET', 'POST'])
+def login():
+    pass
 
 @app.route('/search', methods=['GET', 'POST'])
 def search():

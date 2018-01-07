@@ -3,7 +3,7 @@ from app import db
 
 class Restaurant(db.Model):
     __tablename__ = "Restaurants"
-    id = db.Column(db.Integer, primary_key=True, unique=True)
+    id = db.Column(db.Integer, primary_key=True, unique=True, autoincrement=True)
     name = db.Column(db.String, nullable=False)
     city = db.Column(db.String, nullable=False)
     rating = db.Column(db.Float, nullable=False)
@@ -26,3 +26,10 @@ class Restaurant(db.Model):
         self.tested = tested
         self.imageurl = imageurl
         self.phone = phone
+
+
+class User(db.Model):
+    __tablename__ = "User"
+    id = db.Column(db.Integer, primary_key=True, unique=True, autoincrement=True)
+    name = db.Column(db.String, nullable=False)
+    role = db.Column(db.Integer, nullable=False)

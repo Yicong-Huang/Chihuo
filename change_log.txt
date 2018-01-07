@@ -1,0 +1,28 @@
+[01/04/18]
+* 0.1.0 basic skeleton
+    a) rebuilt the structure
+        - Chihuo.py
+            now templates are declared in the /app/views.py
+        + /app/__init__.py
+            app basics
+        + /app/models.py
+            db.Model classes
+        - views.py
+            small view functions merged into /app/views.py
+        + /app/views.py
+            templates mapping
+    b) change the project requirement library
+        - mysql-python-connector
+        + flask-sqlalchemy
+
+[01/06/18]
+* 0.1.1 basic skeleton
+    a) deployed to AWS
+        + added and modified .xml files
+    b) added mysql requirements
+    c) added Kerena-key.pem
+        private key to access AWS RC2 instance
+    d) added change_log.txt
+    e) fixed file errors
+    f) added User and Role table to DB
+
