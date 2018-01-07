@@ -1,0 +1,22 @@
+.entryheader {
+    font-family: Lato, cursive;
+    font-size: 32px;
+
+}
+
+.entryblock {
+    width: 90%;
+    margin: auto;
+    overflow: auto;
+    _display: inline-block;
+    margin-top: 20px;
+}
+
+.entryimg {
+    float: left;
+    margin-top: 28px;
+
+}
+
+.entryinfo {
+}

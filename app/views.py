@@ -23,9 +23,9 @@ def index():
     return render_template('index.html', name="develop page", entries=entries)
 
 
-@app.route('/login', method=['GET', 'POST'])
+@app.route('/login')
 def login():
-    pass
+    return render_template('login.html')
 
 @app.route('/search', methods=['GET', 'POST'])
 def search():

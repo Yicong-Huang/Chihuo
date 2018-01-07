@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" id="banner-main-css"
+          href="static/css/main.css" type="text/css" media="all">
+    <link rel="stylesheet" id="banner-extra-css" href="static/css/banner-extra.css"
+          type="text/css" media="all">
+    <link rel="stylesheet" id="style-css" href="static/css/style.css"
+          type="text/css" media="all">
+    <link rel='stylesheet' type='text/css' id="Lato-font"
+          href='http://fonts.googleapis.com/css?family=Lato'>
+
+</head>
+<body>
+
+<div class="page-header">
+    <div class="nav-menu">
+        <ul id="menu-main-menu" class="menu-custom">
+            <li id="menu-item-2234" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2234">
+                <a href="">Restaurants</a></li>
+            <li id="menu-item-13059"
+                class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-13059"><a
+                    href="">Field</a></li>
+            <li id="menu-item-13061"
+                class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-13061"><a
+                    href="">My Account</a></li>
+            <li id="menu-item-12593" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12593"><a
+                    href="">About</a></li>
+        </ul>
+    </div>
+</div>
+<div class="content container">
+    <div class="row">
+        <div class="col-md-8">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

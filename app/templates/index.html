@@ -1,85 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel='stylesheet' type='text/css'
-          href='http://fonts.googleapis.com/css?family=Lato'>
-    <style>
-        .entryheader {
-            font-family: Lato, cursive;
-            font-size: 32px;
+{% extends 'banner.html' %}
 
-        }
+{% block content %}
+    <form action="/search" method="get">
+        <input name="q" type="text" aria-label="吃货们正在搜索…" placeholder="吃货们正在搜索…">
 
-        .entryblock {
-            width: 90%;
-            margin: auto;
-            overflow: auto;
-            _display: inline-block;
-            margin-top: 40px;
-        }
+    </form>
 
-        .entryimg {
-            float: left;
-        {#background: #6F0;#} margin-right: 50px;
-            margin-top: 28px;
+    <ul class=entries>
+        {% for entry in entries %}
 
-        }
+            <div class="entryblock">
+                <div class="entryimg">
+                    <img src="{{ entry.imageurl }}" , width="324" ,
+                         height="216"/>
+                </div>
+                <div class="entryinfo" style="overflow:auto;">
+                    <h2 class="entryheader">{{ entry.name }}</h2>
+                    {% for _ in entry.rating.integer %}
+                        <div style="float:left"><img src="/static/images/full_star.png" width="15" height="15"/></div>
 
-        .entryinfo {
-        {#background:#FC0;#} margin-left: 200px;
-        }
+                    {% endfor %}
+                    {% if  entry.rating.decimal == 1 %}
 
-    </style>
+                        <div style="float:left"><img src="/static/images/half_star.png" width="15" height="15"/></div>
+                    {% endif %}
+                    {% for _ in entry.rating.empty %}
+                        <div style="float:left"><img src="/static/images/empty_star.png" width="15" height="15"/></div>
 
-</head>
-<body>
-<form action="/search" method="get">
-    <input name="q" type="text" aria-label="吃货们正在搜索…" placeholder="吃货们正在搜索…">
-
-</form>
-
-<ul class=entries>
-    {% for entry in entries %}
-
-        <div class="entryblock">
-            <div class="entryimg">
-                <img src="{{ entry.imageurl }}" , width="324" ,
-                     height="216"/>
-            </div>
-            <div class="entryinfo" style="overflow:auto;">
-                <h2 class="entryheader">{{ entry.name }}</h2>
-                {% for _ in entry.rating.integer %}
-                    <div style="float:left"><img src="/static/images/full_star.png" width="15" height="15"/></div>
-
-                {% endfor %}
-                {% if  entry.rating.decimal == 1 %}
-
-                    <div style="float:left"><img src="/static/images/half_star.png" width="15" height="15"/></div>
-                {% endif %}
-                {% for _ in entry.rating.empty %}
-                    <div style="float:left"><img src="/static/images/empty_star.png" width="15" height="15"/></div>
-
-                {% endfor %}
+                    {% endfor %}
 
 
 
-                <p style="font-family: Lato;font-size: 16px;"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ entry.cuisine }}&nbsp;&nbsp;·&nbsp;&nbsp;{{ entry.subcategory }}</b>
-                </p>
+                    <p style="font-family: Lato;font-size: 16px;"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ entry.cuisine }}&nbsp;&nbsp;·&nbsp;&nbsp;{{ entry.subcategory }}</b>
+                    </p>
 
+
+                </div>
+
+
+                <div><p style="font-family: Lato;">&nbsp;· &nbsp;{{ entry.phone }}&nbsp; ·&nbsp;</p></div>
 
             </div>
 
 
-            <div><p style="font-family: Lato;">&nbsp;· &nbsp;{{ entry.phone }}&nbsp; ·&nbsp;</p></div>
+        {% endfor %}
+    </ul>
 
-        </div>
-
-
-    {% endfor %}
-</ul>
-
-
-</body>
-</html>
+{% endblock %}
